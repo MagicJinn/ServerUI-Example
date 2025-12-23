@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "serverui-example",
+	"version": "${version}",
+	"name": "ServerUI Example",
+	"description": "Example mod to demonstrate ServerUI",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://github.com/MagicJinn/ServerUI-Example"
+	},
+	"license": "MIT",
+	"icon": "assets/serverui-example/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": ["magicjinn.serveruiexample.ServerUIExample"],
+		"client": ["magicjinn.serveruiexample.ServerUIExampleClient"],
+		"serverui": ["magicjinn.serveruiexample.ServerUIExampleServerUI"]
+	},
+	"mixins": [
+		"serverui-example.mixins.json",
+		{
+			"config": "serverui-example.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.3",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*",
+		"serverui": "*"
+	}
+}
